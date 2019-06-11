@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="4115000001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="65" />
+   <wvobject type="logic" fp_name="/testbench/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/rx_clk">
+      <obj_property name="ElementShortName">rx_clk</obj_property>
+      <obj_property name="ObjectShortName">rx_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/rx_clk_90deg">
+      <obj_property name="ElementShortName">rx_clk_90deg</obj_property>
+      <obj_property name="ObjectShortName">rx_clk_90deg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/packet_clk">
+      <obj_property name="ElementShortName">packet_clk</obj_property>
+      <obj_property name="ObjectShortName">packet_clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/count">
+      <obj_property name="ElementShortName">count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">count[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/trans_1">
+      <obj_property name="ElementShortName">trans_1</obj_property>
+      <obj_property name="ObjectShortName">trans_1</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/data1_1">
+      <obj_property name="ElementShortName">data1_1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data1_1[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/data2_1">
+      <obj_property name="ElementShortName">data2_1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data2_1[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/rd_1">
+      <obj_property name="ElementShortName">rd_1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_1[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/rx_ctl_oddr_1">
+      <obj_property name="ElementShortName">rx_ctl_oddr_1</obj_property>
+      <obj_property name="ObjectShortName">rx_ctl_oddr_1</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/example1">
+      <obj_property name="ElementShortName">example1[71:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">example1[71:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/rgmii1_td">
+      <obj_property name="ElementShortName">rgmii1_td[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii1_td[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii1_tx_ctl">
+      <obj_property name="ElementShortName">rgmii1_tx_ctl</obj_property>
+      <obj_property name="ObjectShortName">rgmii1_tx_ctl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii1_txc">
+      <obj_property name="ElementShortName">rgmii1_txc</obj_property>
+      <obj_property name="ObjectShortName">rgmii1_txc</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/rgmii2_td">
+      <obj_property name="ElementShortName">rgmii2_td[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii2_td[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii2_tx_ctl">
+      <obj_property name="ElementShortName">rgmii2_tx_ctl</obj_property>
+      <obj_property name="ObjectShortName">rgmii2_tx_ctl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii2_txc">
+      <obj_property name="ElementShortName">rgmii2_txc</obj_property>
+      <obj_property name="ObjectShortName">rgmii2_txc</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/rgmii3_td">
+      <obj_property name="ElementShortName">rgmii3_td[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii3_td[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii3_tx_ctl">
+      <obj_property name="ElementShortName">rgmii3_tx_ctl</obj_property>
+      <obj_property name="ObjectShortName">rgmii3_tx_ctl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii3_txc">
+      <obj_property name="ElementShortName">rgmii3_txc</obj_property>
+      <obj_property name="ObjectShortName">rgmii3_txc</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/rgmii4_td">
+      <obj_property name="ElementShortName">rgmii4_td[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii4_td[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii4_tx_ctl">
+      <obj_property name="ElementShortName">rgmii4_tx_ctl</obj_property>
+      <obj_property name="ObjectShortName">rgmii4_tx_ctl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii4_txc">
+      <obj_property name="ElementShortName">rgmii4_txc</obj_property>
+      <obj_property name="ObjectShortName">rgmii4_txc</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/rgmii_rd">
+      <obj_property name="ElementShortName">rgmii_rd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rd[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii_rx_ctl">
+      <obj_property name="ElementShortName">rgmii_rx_ctl</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rx_ctl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/rgmii_rxc">
+      <obj_property name="ElementShortName">rgmii_rxc</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rxc</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_s_rx_axis_mac_tdata">
+      <obj_property name="ElementShortName">rgmii_s_rx_axis_mac_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii_s_rx_axis_mac_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_s_rx_axis_mac_tlast">
+      <obj_property name="ElementShortName">rgmii_s_rx_axis_mac_tlast</obj_property>
+      <obj_property name="ObjectShortName">rgmii_s_rx_axis_mac_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_s_rx_axis_mac_tuser">
+      <obj_property name="ElementShortName">rgmii_s_rx_axis_mac_tuser</obj_property>
+      <obj_property name="ObjectShortName">rgmii_s_rx_axis_mac_tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_s_rx_axis_mac_tvalid">
+      <obj_property name="ElementShortName">rgmii_s_rx_axis_mac_tvalid</obj_property>
+      <obj_property name="ObjectShortName">rgmii_s_rx_axis_mac_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_s_rx_aclk">
+      <obj_property name="ElementShortName">rgmii_s_rx_aclk</obj_property>
+      <obj_property name="ObjectShortName">rgmii_s_rx_aclk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_m_tx_axis_mac_tdata">
+      <obj_property name="ElementShortName">rgmii_m_tx_axis_mac_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii_m_tx_axis_mac_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_m_tx_axis_mac_tlast">
+      <obj_property name="ElementShortName">rgmii_m_tx_axis_mac_tlast</obj_property>
+      <obj_property name="ObjectShortName">rgmii_m_tx_axis_mac_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_m_tx_axis_mac_tuser">
+      <obj_property name="ElementShortName">rgmii_m_tx_axis_mac_tuser</obj_property>
+      <obj_property name="ObjectShortName">rgmii_m_tx_axis_mac_tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_m_tx_axis_mac_tvalid">
+      <obj_property name="ElementShortName">rgmii_m_tx_axis_mac_tvalid</obj_property>
+      <obj_property name="ObjectShortName">rgmii_m_tx_axis_mac_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/rgmiimux_module_0/rgmii_m_tx_axis_mac_tdest">
+      <obj_property name="ElementShortName">rgmii_m_tx_axis_mac_tdest[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii_m_tx_axis_mac_tdest[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/tri_mode_ethernet_mac_0/rx_axis_mac_tdata">
+      <obj_property name="ElementShortName">rx_axis_mac_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_axis_mac_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/tri_mode_ethernet_mac_0/rx_axis_mac_tvalid">
+      <obj_property name="ElementShortName">rx_axis_mac_tvalid</obj_property>
+      <obj_property name="ObjectShortName">rx_axis_mac_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/tri_mode_ethernet_mac_0/rx_axis_mac_tlast">
+      <obj_property name="ElementShortName">rx_axis_mac_tlast</obj_property>
+      <obj_property name="ObjectShortName">rx_axis_mac_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/tri_mode_ethernet_mac_0/rx_axis_mac_tuser">
+      <obj_property name="ElementShortName">rx_axis_mac_tuser</obj_property>
+      <obj_property name="ObjectShortName">rx_axis_mac_tuser</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/tri_mode_ethernet_mac_0/rgmii_rxd">
+      <obj_property name="ElementShortName">rgmii_rxd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rxd[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/tri_mode_ethernet_mac_0/rgmii_rx_ctl">
+      <obj_property name="ElementShortName">rgmii_rx_ctl</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rx_ctl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/tri_mode_ethernet_mac_0/rgmii_rxc">
+      <obj_property name="ElementShortName">rgmii_rxc</obj_property>
+      <obj_property name="ObjectShortName">rgmii_rxc</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/S00_AXIS_ACLK">
+      <obj_property name="ElementShortName">S00_AXIS_ACLK</obj_property>
+      <obj_property name="ObjectShortName">S00_AXIS_ACLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/S00_AXIS_ARESETN">
+      <obj_property name="ElementShortName">S00_AXIS_ARESETN</obj_property>
+      <obj_property name="ObjectShortName">S00_AXIS_ARESETN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/S00_AXIS_tdata">
+      <obj_property name="ElementShortName">S00_AXIS_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">S00_AXIS_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/S00_AXIS_tdest">
+      <obj_property name="ElementShortName">S00_AXIS_tdest[1:0]</obj_property>
+      <obj_property name="ObjectShortName">S00_AXIS_tdest[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/S00_AXIS_tlast">
+      <obj_property name="ElementShortName">S00_AXIS_tlast</obj_property>
+      <obj_property name="ObjectShortName">S00_AXIS_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/S00_AXIS_tuser">
+      <obj_property name="ElementShortName">S00_AXIS_tuser</obj_property>
+      <obj_property name="ObjectShortName">S00_AXIS_tuser</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/S00_AXIS_tvalid">
+      <obj_property name="ElementShortName">S00_AXIS_tvalid</obj_property>
+      <obj_property name="ObjectShortName">S00_AXIS_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M00_AXIS_ACLK">
+      <obj_property name="ElementShortName">M00_AXIS_ACLK</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_ACLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M00_AXIS_ARESETN">
+      <obj_property name="ElementShortName">M00_AXIS_ARESETN</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_ARESETN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M00_AXIS_tdata">
+      <obj_property name="ElementShortName">M00_AXIS_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M00_AXIS_tlast">
+      <obj_property name="ElementShortName">M00_AXIS_tlast</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M00_AXIS_tready">
+      <obj_property name="ElementShortName">M00_AXIS_tready</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M00_AXIS_tuser">
+      <obj_property name="ElementShortName">M00_AXIS_tuser[0:0]</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_tuser[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M00_AXIS_tvalid">
+      <obj_property name="ElementShortName">M00_AXIS_tvalid</obj_property>
+      <obj_property name="ObjectShortName">M00_AXIS_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M01_AXIS_ACLK">
+      <obj_property name="ElementShortName">M01_AXIS_ACLK</obj_property>
+      <obj_property name="ObjectShortName">M01_AXIS_ACLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M01_AXIS_ARESETN">
+      <obj_property name="ElementShortName">M01_AXIS_ARESETN</obj_property>
+      <obj_property name="ObjectShortName">M01_AXIS_ARESETN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M01_AXIS_tdata">
+      <obj_property name="ElementShortName">M01_AXIS_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">M01_AXIS_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M01_AXIS_tlast">
+      <obj_property name="ElementShortName">M01_AXIS_tlast</obj_property>
+      <obj_property name="ObjectShortName">M01_AXIS_tlast</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M01_AXIS_tready">
+      <obj_property name="ElementShortName">M01_AXIS_tready</obj_property>
+      <obj_property name="ObjectShortName">M01_AXIS_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M01_AXIS_tuser">
+      <obj_property name="ElementShortName">M01_AXIS_tuser[0:0]</obj_property>
+      <obj_property name="ObjectShortName">M01_AXIS_tuser[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/design_1_wrapper_inst/design_1_i/axis_interconnect_0/M01_AXIS_tvalid">
+      <obj_property name="ElementShortName">M01_AXIS_tvalid</obj_property>
+      <obj_property name="ObjectShortName">M01_AXIS_tvalid</obj_property>
+   </wvobject>
+</wave_config>
