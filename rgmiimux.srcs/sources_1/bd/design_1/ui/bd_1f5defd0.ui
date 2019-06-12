@@ -11,43 +11,77 @@ preplace port clk200M -pg 1 -y 30 -defaultsOSRD
 preplace port rgmii4 -pg 1 -y -30 -defaultsOSRD
 preplace port rgmii -pg 1 -y -490 -defaultsOSRD -left
 preplace inst tri_mode_ethernet_mac_0 -pg 1 -lvl 3 -y -540 -defaultsOSRD
-preplace inst tri_mode_ethernet_mac_1 -pg 1 -lvl 4 -y -900 -defaultsOSRD -resize 320 312
+preplace inst tri_mode_ethernet_mac_1 -pg 1 -lvl 4 -y -900 -defaultsOSRD -resize 320 318
 preplace inst axis_interconnect_0 -pg 1 -lvl 3 -y -160 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 1 -y -530 -defaultsOSRD
-preplace inst tri_mode_ethernet_mac_2 -pg 1 -lvl 4 -y -510 -defaultsOSRD
-preplace inst xlconstant_1 -pg 1 -lvl 1 -y -420 -defaultsOSRD
-preplace inst tri_mode_ethernet_mac_3 -pg 1 -lvl 4 -y -170 -defaultsOSRD
-preplace inst tri_mode_ethernet_mac_4 -pg 1 -lvl 4 -y 170 -defaultsOSRD
-preplace inst rgmiimux_module_0 -pg 1 -lvl 2 -y -800 -defaultsOSRD
-preplace netloc tri_mode_ethernet_mac_2_rgmii 1 4 1 1510J
-preplace netloc tri_mode_ethernet_mac_2_tx_enable 1 2 3 580 -1080 NJ -1080 1480
-preplace netloc xlconstant_1_dout 1 1 3 N -420 490 -780 1050
-preplace netloc glbl_rstn_0_1 1 0 4 -500 -680 -40 -680 530 -770 1030
-preplace netloc axis_interconnect_0_M03_AXIS 1 3 1 970
-preplace netloc tri_mode_ethernet_mac_4_rgmii 1 4 1 1510J
-preplace netloc axis_interconnect_0_M01_AXIS 1 3 1 1010
-preplace netloc M02_AXIS_ACLK_1 1 2 3 580 350 NJ 350 1500
-preplace netloc M01_AXIS_ACLK_1 1 2 3 560 -1100 NJ -1100 1500
-preplace netloc tri_mode_ethernet_mac_0_gtx_clk90_out 1 3 1 990
-preplace netloc axis_interconnect_0_M00_AXIS 1 3 1 1000
-preplace netloc M03_AXIS_ACLK_1 1 2 3 570 380 NJ 380 1510
-preplace netloc axis_interconnect_0_M02_AXIS 1 3 1 1060
-preplace netloc tri_mode_ethernet_mac_1_rgmii 1 4 1 1510
-preplace netloc gtx_clk_0_1 1 0 3 N -70 N -70 550
-preplace netloc xlconstant_0_dout 1 1 3 N -530 500 -760 1040
-preplace netloc tri_mode_ethernet_mac_4_tx_enable 1 2 3 600 370 NJ 370 1470
-preplace netloc M00_AXIS_ACLK_1 1 2 3 570 -1110 NJ -1110 1490
-preplace netloc tri_mode_ethernet_mac_0_tx_enable 1 2 2 600 -340 960
-preplace netloc tri_mode_ethernet_mac_3_tx_enable 1 2 3 590 360 NJ 360 1480
-preplace netloc tri_mode_ethernet_mac_0_rgmii 1 0 4 -490 -670 N -670 520 -740 960
-preplace netloc rgmiimux_module_0_rgmii_m_tx_axis_mac 1 2 1 510
-preplace netloc S00_AXIS_ACLK_1 1 1 3 -30 -660 540 -750 970
-preplace netloc tri_mode_ethernet_mac_0_gtx_clk_out 1 3 1 1020
-preplace netloc tri_mode_ethernet_mac_3_rgmii 1 4 1 1490J
-preplace netloc tri_mode_ethernet_mac_1_tx_enable 1 2 3 590 -1090 NJ -1090 1470
-preplace netloc refclk_0_1 1 0 3 -490 -360 -30 -490 N
-preplace netloc tri_mode_ethernet_mac_0_m_axis_rx 1 1 3 -40 -920 NJ -920 980
-levelinfo -pg 1 -520 -130 250 780 1290 1530 -top -1220 -bot 560
+preplace inst xlconstant_0 -pg 1 -lvl 1 -y -680 -defaultsOSRD
+preplace inst tri_mode_ethernet_mac_2 -pg 1 -lvl 4 -y -540 -defaultsOSRD
+preplace inst axis_interconnect_1 -pg 1 -lvl 3 -y 260 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -y -320 -defaultsOSRD
+preplace inst tri_mode_ethernet_mac_3 -pg 1 -lvl 4 -y -180 -defaultsOSRD
+preplace inst tri_mode_ethernet_mac_4 -pg 1 -lvl 4 -y 270 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 3 -y -870 -defaultsOSRD
+preplace inst rgmiimux_module_0 -pg 1 -lvl 2 -y -840 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 5 -y -790 -defaultsOSRD
+preplace inst util_vector_logic_2 -pg 1 -lvl 5 -y -420 -defaultsOSRD
+preplace inst util_vector_logic_3 -pg 1 -lvl 5 -y 0 -defaultsOSRD
+preplace inst vlan_inserter_0 -pg 1 -lvl 5 -y -1000 -defaultsOSRD
+preplace inst util_vector_logic_4 -pg 1 -lvl 5 -y 350 -defaultsOSRD
+preplace inst vlan_inserter_1 -pg 1 -lvl 5 -y -590 -defaultsOSRD
+preplace inst vlan_inserter_2 -pg 1 -lvl 5 -y -210 -defaultsOSRD
+preplace inst vlan_inserter_3 -pg 1 -lvl 5 -y 150 -defaultsOSRD
+preplace netloc tri_mode_ethernet_mac_2_m_axis_rx 1 4 1 2020
+preplace netloc tri_mode_ethernet_mac_2_rgmii 1 4 2 1990J -670 2440
+preplace netloc tri_mode_ethernet_mac_4_rx_reset 1 4 1 2010
+preplace netloc tri_mode_ethernet_mac_2_tx_enable 1 2 3 660J -1090 NJ -1090 1920
+preplace netloc xlconstant_1_dout 1 1 3 N -320 450 -800 1220
+preplace netloc glbl_rstn_0_1 1 0 4 -490 -740 -90 -920 430 -940 1180
+preplace netloc tri_mode_ethernet_mac_1_m_axis_rx 1 4 1 1990
+preplace netloc axis_interconnect_0_M03_AXIS 1 3 1 1130
+preplace netloc tri_mode_ethernet_mac_4_rgmii 1 4 2 2020J -60 2440
+preplace netloc tri_mode_ethernet_mac_1_rx_reset 1 4 1 2020
+preplace netloc tri_mode_ethernet_mac_0_tx_mac_aclk 1 2 2 610J -760 1110
+preplace netloc axis_interconnect_0_M01_AXIS 1 3 1 1130
+preplace netloc M02_AXIS_ACLK_1 1 2 3 620J -1110 NJ -1110 1970
+preplace netloc M01_AXIS_ACLK_1 1 2 3 630J -1120 NJ -1120 1960
+preplace netloc tri_mode_ethernet_mac_4_m_axis_rx 1 4 1 2030
+preplace netloc util_vector_logic_3_Res 1 2 4 490J -1170 NJ -1170 2010J -290 2390
+preplace netloc util_vector_logic_4_Res 1 2 4 700J 520 NJ 520 2040J 410 2390
+preplace netloc tri_mode_ethernet_mac_0_gtx_clk90_out 1 3 1 1240
+preplace netloc tri_mode_ethernet_mac_3_m_axis_rx 1 4 1 1990
+preplace netloc util_vector_logic_0_Res 1 2 2 570 -950 1110
+preplace netloc vlan_inserter_2_m_axis 1 2 4 550 -1150 NJ -1150 NJ -1150 2420
+preplace netloc axis_interconnect_0_M00_AXIS 1 3 1 1170
+preplace netloc tri_mode_ethernet_mac_3_rx_reset 1 4 1 2010
+preplace netloc M03_AXIS_ACLK_1 1 2 3 680J -770 1250J -720 1930
+preplace netloc vlan_inserter_1_m_axis 1 2 4 540 -1160 NJ -1160 NJ -1160 2410
+preplace netloc axis_interconnect_0_M02_AXIS 1 3 1 1120
+preplace netloc tri_mode_ethernet_mac_1_rgmii 1 4 2 1980 -1080 2440
+preplace netloc gtx_clk_0_1 1 0 3 N -70 N -70 480
+preplace netloc vlan_inserter_0_m_axis 1 2 4 530 -1210 NJ -1210 NJ -1210 2400
+preplace netloc xlconstant_0_dout 1 1 3 N -680 460 -810 1210
+preplace netloc vlan_inserter_3_m_axis 1 2 4 560 -1140 NJ -1140 NJ -1140 2430
+preplace netloc tri_mode_ethernet_mac_4_tx_enable 1 2 3 580J 530 NJ 530 1910
+preplace netloc M00_AXIS_ACLK_1 1 2 3 640J -1130 NJ -1130 1950
+preplace netloc tri_mode_ethernet_mac_0_tx_enable 1 2 2 690 -780 1140
+preplace netloc tri_mode_ethernet_mac_0_rx_reset 1 2 2 700 -930 1150
+preplace netloc tri_mode_ethernet_mac_3_tx_enable 1 2 3 650J -1080 NJ -1080 1940
+preplace netloc tri_mode_ethernet_mac_0_rgmii 1 0 4 -500 -930 N -930 420 -960 1130
+preplace netloc rgmiimux_module_0_rgmii_m_tx_axis_mac 1 2 1 440
+preplace netloc tri_mode_ethernet_mac_2_rx_reset 1 4 1 1990
+preplace netloc util_vector_logic_1_Res 1 2 4 520J -1190 NJ -1190 2040J -1090 2390
+preplace netloc util_vector_logic_2_Res 1 2 4 500J -1180 NJ -1180 2030J -510 2390
+preplace netloc S00_AXIS_ACLK_1 1 1 3 -80 -760 470 -790 1120
+preplace netloc tri_mode_ethernet_mac_0_gtx_clk_out 1 3 1 1230
+preplace netloc axis_interconnect_1_M00_AXIS 1 2 2 700 -340 1110
+preplace netloc tri_mode_ethernet_mac_3_rgmii 1 4 2 NJ -300 2440
+preplace netloc tri_mode_ethernet_mac_2_rx_mac_aclk 1 2 3 600J -750 1200J -360 2000
+preplace netloc tri_mode_ethernet_mac_1_tx_enable 1 2 3 670J -1100 NJ -1100 1910
+preplace netloc refclk_0_1 1 0 3 -480 -490 N -490 N
+preplace netloc tri_mode_ethernet_mac_0_m_axis_rx 1 1 3 -80 -970 NJ -970 1160
+preplace netloc tri_mode_ethernet_mac_1_rx_mac_aclk 1 2 3 510J -1200 NJ -1200 2000
+preplace netloc tri_mode_ethernet_mac_3_rx_mac_aclk 1 2 3 590J -740 1190J 0 1990
+preplace netloc tri_mode_ethernet_mac_4_rx_mac_aclk 1 2 3 690J 510 1250J 90 1980
+levelinfo -pg 1 -520 -180 210 930 1730 2240 2460 -top -1300 -bot 1310
 ",
 }
 0

@@ -35,7 +35,7 @@ module testbench(
     logic [3:0] data2_1;
     logic [3:0] rd_1;
     logic rx_ctl_oddr_1;
-    logic [7:0] example1 [71:0];
+    logic [7:0] example1 [75:0];
     
     initial begin
         rst = 1;
@@ -65,7 +65,7 @@ module testbench(
         end else begin
             count <= 0;
         end
-        trans_1 <= packet_clk && count < 8'd72;
+        trans_1 <= packet_clk && count < 8'd76;
         data1_1 <= packet_clk ? example1[count][3:0] : 4'b0000;
         data2_1 <= packet_clk ? example1[count][7:4] : 4'b0000;
     end
@@ -95,6 +95,19 @@ module testbench(
         .R(1'b0)
     );
 
+    logic rgmii1_ctl;
+    logic [3:0] rgmii1_data;
+    logic rgmii1_clk;
+    logic rgmii2_ctl;
+    logic [3:0] rgmii2_data;
+    logic rgmii2_clk;
+    logic rgmii3_ctl;
+    logic [3:0] rgmii3_data;
+    logic rgmii3_clk;
+    logic rgmii4_ctl;
+    logic [3:0] rgmii4_data;
+    logic rgmii4_clk;
+
     design_1_wrapper design_1_wrapper_inst(
         .rstn(~rst),
         .clk125M(rx_clk),
@@ -104,9 +117,32 @@ module testbench(
         .rgmii_rx_ctl(rx_ctl_oddr_1),
         .rgmii_rxc(rx_clk_90deg),
         
-        .rgmii1_rxc(rx_clk_90deg),
-        .rgmii2_rxc(rx_clk_90deg),
-        .rgmii3_rxc(rx_clk_90deg),
-        .rgmii4_rxc(rx_clk_90deg)
+        .rgmii1_rd(rgmii1_data),
+        .rgmii1_rx_ctl(rgmii1_ctl),
+        .rgmii1_rxc(rgmii1_clk),
+        .rgmii1_td(rgmii1_data),
+        .rgmii1_tx_ctl(rgmii1_ctl),
+        .rgmii1_txc(rgmii1_clk),
+
+        .rgmii2_rd(rgmii2_data),
+        .rgmii2_rx_ctl(rgmii2_ctl),
+        .rgmii2_rxc(rgmii2_clk),
+        .rgmii2_td(rgmii2_data),
+        .rgmii2_tx_ctl(rgmii2_ctl),
+        .rgmii2_txc(rgmii2_clk),
+
+        .rgmii3_rd(rgmii3_data),
+        .rgmii3_rx_ctl(rgmii3_ctl),
+        .rgmii3_rxc(rgmii3_clk),
+        .rgmii3_td(rgmii3_data),
+        .rgmii3_tx_ctl(rgmii3_ctl),
+        .rgmii3_txc(rgmii3_clk),
+
+        .rgmii4_rd(rgmii4_data),
+        .rgmii4_rx_ctl(rgmii4_ctl),
+        .rgmii4_rxc(rgmii4_clk),
+        .rgmii4_td(rgmii4_data),
+        .rgmii4_tx_ctl(rgmii4_ctl),
+        .rgmii4_txc(rgmii4_clk)
     );
 endmodule

@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# rgmiimux_module
+# rgmiimux_module, vlan_inserter, vlan_inserter, vlan_inserter, vlan_inserter
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -211,6 +211,31 @@ proc create_root_design { parentCell } {
    CONFIG.S00_HAS_REGSLICE {1} \
  ] $axis_interconnect_0
 
+  # Create instance: axis_interconnect_1, and set properties
+  set axis_interconnect_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_interconnect:2.1 axis_interconnect_1 ]
+  set_property -dict [ list \
+   CONFIG.ARB_ON_TLAST {0} \
+   CONFIG.ENABLE_ADVANCED_OPTIONS {0} \
+   CONFIG.ENABLE_FIFO_COUNT_PORTS {0} \
+   CONFIG.M00_FIFO_DEPTH {2048} \
+   CONFIG.M00_FIFO_MODE {1} \
+   CONFIG.M00_HAS_REGSLICE {1} \
+   CONFIG.NUM_MI {1} \
+   CONFIG.NUM_SI {4} \
+   CONFIG.S00_FIFO_DEPTH {2048} \
+   CONFIG.S00_FIFO_MODE {1} \
+   CONFIG.S00_HAS_REGSLICE {1} \
+   CONFIG.S01_FIFO_DEPTH {2048} \
+   CONFIG.S01_FIFO_MODE {1} \
+   CONFIG.S01_HAS_REGSLICE {1} \
+   CONFIG.S02_FIFO_DEPTH {2048} \
+   CONFIG.S02_FIFO_MODE {1} \
+   CONFIG.S02_HAS_REGSLICE {1} \
+   CONFIG.S03_FIFO_DEPTH {2048} \
+   CONFIG.S03_FIFO_MODE {1} \
+   CONFIG.S03_HAS_REGSLICE {1} \
+ ] $axis_interconnect_1
+
   # Create instance: rgmiimux_module_0, and set properties
   set block_name rgmiimux_module
   set block_cell_name rgmiimux_module_0
@@ -288,17 +313,113 @@ proc create_root_design { parentCell } {
    CONFIG.Statistics_Counters {false} \
  ] $tri_mode_ethernet_mac_4
 
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: util_vector_logic_4, and set properties
+  set util_vector_logic_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_4 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_4
+
+  # Create instance: vlan_inserter_0, and set properties
+  set block_name vlan_inserter
+  set block_cell_name vlan_inserter_0
+  if { [catch {set vlan_inserter_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $vlan_inserter_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.VLAN_IDENTIFIER {1} \
+ ] $vlan_inserter_0
+
+  # Create instance: vlan_inserter_1, and set properties
+  set block_name vlan_inserter
+  set block_cell_name vlan_inserter_1
+  if { [catch {set vlan_inserter_1 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $vlan_inserter_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.VLAN_IDENTIFIER {1} \
+ ] $vlan_inserter_1
+
+  # Create instance: vlan_inserter_2, and set properties
+  set block_name vlan_inserter
+  set block_cell_name vlan_inserter_2
+  if { [catch {set vlan_inserter_2 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $vlan_inserter_2 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.VLAN_IDENTIFIER {1} \
+ ] $vlan_inserter_2
+
+  # Create instance: vlan_inserter_3, and set properties
+  set block_name vlan_inserter
+  set block_cell_name vlan_inserter_3
+  if { [catch {set vlan_inserter_3 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $vlan_inserter_3 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+    set_property -dict [ list \
+   CONFIG.VLAN_IDENTIFIER {1} \
+ ] $vlan_inserter_3
+
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
-   CONFIG.CONST_VAL {10282} \
+   CONFIG.CONST_VAL {10286} \
    CONFIG.CONST_WIDTH {80} \
  ] $xlconstant_0
 
   # Create instance: xlconstant_1, and set properties
   set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
   set_property -dict [ list \
-   CONFIG.CONST_VAL {8194} \
+   CONFIG.CONST_VAL {8206} \
    CONFIG.CONST_WIDTH {80} \
  ] $xlconstant_1
 
@@ -307,13 +428,22 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axis_interconnect_0_M01_AXIS [get_bd_intf_pins axis_interconnect_0/M01_AXIS] [get_bd_intf_pins tri_mode_ethernet_mac_2/s_axis_tx]
   connect_bd_intf_net -intf_net axis_interconnect_0_M02_AXIS [get_bd_intf_pins axis_interconnect_0/M02_AXIS] [get_bd_intf_pins tri_mode_ethernet_mac_3/s_axis_tx]
   connect_bd_intf_net -intf_net axis_interconnect_0_M03_AXIS [get_bd_intf_pins axis_interconnect_0/M03_AXIS] [get_bd_intf_pins tri_mode_ethernet_mac_4/s_axis_tx]
+  connect_bd_intf_net -intf_net axis_interconnect_1_M00_AXIS [get_bd_intf_pins axis_interconnect_1/M00_AXIS] [get_bd_intf_pins tri_mode_ethernet_mac_0/s_axis_tx]
   connect_bd_intf_net -intf_net rgmiimux_module_0_rgmii_m_tx_axis_mac [get_bd_intf_pins axis_interconnect_0/S00_AXIS] [get_bd_intf_pins rgmiimux_module_0/rgmii_m_tx_axis_mac]
   connect_bd_intf_net -intf_net tri_mode_ethernet_mac_0_m_axis_rx [get_bd_intf_pins rgmiimux_module_0/rgmii_s_rx_axis_mac] [get_bd_intf_pins tri_mode_ethernet_mac_0/m_axis_rx]
   connect_bd_intf_net -intf_net tri_mode_ethernet_mac_0_rgmii [get_bd_intf_ports rgmii] [get_bd_intf_pins tri_mode_ethernet_mac_0/rgmii]
+  connect_bd_intf_net -intf_net tri_mode_ethernet_mac_1_m_axis_rx [get_bd_intf_pins tri_mode_ethernet_mac_1/m_axis_rx] [get_bd_intf_pins vlan_inserter_0/s_axis]
   connect_bd_intf_net -intf_net tri_mode_ethernet_mac_1_rgmii [get_bd_intf_ports rgmii1] [get_bd_intf_pins tri_mode_ethernet_mac_1/rgmii]
+  connect_bd_intf_net -intf_net tri_mode_ethernet_mac_2_m_axis_rx [get_bd_intf_pins tri_mode_ethernet_mac_2/m_axis_rx] [get_bd_intf_pins vlan_inserter_1/s_axis]
   connect_bd_intf_net -intf_net tri_mode_ethernet_mac_2_rgmii [get_bd_intf_ports rgmii2] [get_bd_intf_pins tri_mode_ethernet_mac_2/rgmii]
+  connect_bd_intf_net -intf_net tri_mode_ethernet_mac_3_m_axis_rx [get_bd_intf_pins tri_mode_ethernet_mac_3/m_axis_rx] [get_bd_intf_pins vlan_inserter_2/s_axis]
   connect_bd_intf_net -intf_net tri_mode_ethernet_mac_3_rgmii [get_bd_intf_ports rgmii3] [get_bd_intf_pins tri_mode_ethernet_mac_3/rgmii]
+  connect_bd_intf_net -intf_net tri_mode_ethernet_mac_4_m_axis_rx [get_bd_intf_pins tri_mode_ethernet_mac_4/m_axis_rx] [get_bd_intf_pins vlan_inserter_3/s_axis]
   connect_bd_intf_net -intf_net tri_mode_ethernet_mac_4_rgmii [get_bd_intf_ports rgmii4] [get_bd_intf_pins tri_mode_ethernet_mac_4/rgmii]
+  connect_bd_intf_net -intf_net vlan_inserter_0_m_axis [get_bd_intf_pins axis_interconnect_1/S00_AXIS] [get_bd_intf_pins vlan_inserter_0/m_axis]
+  connect_bd_intf_net -intf_net vlan_inserter_1_m_axis [get_bd_intf_pins axis_interconnect_1/S01_AXIS] [get_bd_intf_pins vlan_inserter_1/m_axis]
+  connect_bd_intf_net -intf_net vlan_inserter_2_m_axis [get_bd_intf_pins axis_interconnect_1/S02_AXIS] [get_bd_intf_pins vlan_inserter_2/m_axis]
+  connect_bd_intf_net -intf_net vlan_inserter_3_m_axis [get_bd_intf_pins axis_interconnect_1/S03_AXIS] [get_bd_intf_pins vlan_inserter_3/m_axis]
 
   # Create port connections
   connect_bd_net -net M00_AXIS_ACLK_1 [get_bd_pins axis_interconnect_0/M00_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_1/tx_mac_aclk]
@@ -321,16 +451,31 @@ proc create_root_design { parentCell } {
   connect_bd_net -net M02_AXIS_ACLK_1 [get_bd_pins axis_interconnect_0/M02_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_3/tx_mac_aclk]
   connect_bd_net -net M03_AXIS_ACLK_1 [get_bd_pins axis_interconnect_0/M03_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_4/tx_mac_aclk]
   connect_bd_net -net S00_AXIS_ACLK_1 [get_bd_pins axis_interconnect_0/S00_AXIS_ACLK] [get_bd_pins rgmiimux_module_0/rgmii_s_rx_aclk] [get_bd_pins tri_mode_ethernet_mac_0/rx_mac_aclk]
-  connect_bd_net -net glbl_rstn_0_1 [get_bd_ports rstn] [get_bd_pins axis_interconnect_0/ARESETN] [get_bd_pins rgmiimux_module_0/arstn] [get_bd_pins tri_mode_ethernet_mac_0/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_0/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_0/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_1/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_1/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_1/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_2/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_2/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_2/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_3/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_3/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_3/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_4/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_4/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_4/tx_axi_rstn]
-  connect_bd_net -net gtx_clk_0_1 [get_bd_ports clk125M] [get_bd_pins axis_interconnect_0/ACLK] [get_bd_pins tri_mode_ethernet_mac_0/gtx_clk]
+  connect_bd_net -net glbl_rstn_0_1 [get_bd_ports rstn] [get_bd_pins axis_interconnect_0/ARESETN] [get_bd_pins axis_interconnect_1/ARESETN] [get_bd_pins rgmiimux_module_0/arstn] [get_bd_pins tri_mode_ethernet_mac_0/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_0/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_0/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_1/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_1/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_1/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_2/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_2/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_2/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_3/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_3/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_3/tx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_4/glbl_rstn] [get_bd_pins tri_mode_ethernet_mac_4/rx_axi_rstn] [get_bd_pins tri_mode_ethernet_mac_4/tx_axi_rstn]
+  connect_bd_net -net gtx_clk_0_1 [get_bd_ports clk125M] [get_bd_pins axis_interconnect_0/ACLK] [get_bd_pins axis_interconnect_1/ACLK] [get_bd_pins tri_mode_ethernet_mac_0/gtx_clk]
   connect_bd_net -net refclk_0_1 [get_bd_ports clk200M] [get_bd_pins tri_mode_ethernet_mac_0/refclk]
   connect_bd_net -net tri_mode_ethernet_mac_0_gtx_clk90_out [get_bd_pins tri_mode_ethernet_mac_0/gtx_clk90_out] [get_bd_pins tri_mode_ethernet_mac_1/gtx_clk90] [get_bd_pins tri_mode_ethernet_mac_2/gtx_clk90] [get_bd_pins tri_mode_ethernet_mac_3/gtx_clk90] [get_bd_pins tri_mode_ethernet_mac_4/gtx_clk90]
   connect_bd_net -net tri_mode_ethernet_mac_0_gtx_clk_out [get_bd_pins tri_mode_ethernet_mac_0/gtx_clk_out] [get_bd_pins tri_mode_ethernet_mac_1/gtx_clk] [get_bd_pins tri_mode_ethernet_mac_2/gtx_clk] [get_bd_pins tri_mode_ethernet_mac_3/gtx_clk] [get_bd_pins tri_mode_ethernet_mac_4/gtx_clk]
+  connect_bd_net -net tri_mode_ethernet_mac_0_rx_reset [get_bd_pins tri_mode_ethernet_mac_0/rx_reset] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net tri_mode_ethernet_mac_0_tx_enable [get_bd_pins axis_interconnect_0/S00_AXIS_ARESETN] [get_bd_pins tri_mode_ethernet_mac_0/tx_enable]
+  connect_bd_net -net tri_mode_ethernet_mac_0_tx_mac_aclk [get_bd_pins axis_interconnect_1/M00_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_0/tx_mac_aclk]
+  connect_bd_net -net tri_mode_ethernet_mac_1_rx_mac_aclk [get_bd_pins axis_interconnect_1/S00_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_1/rx_mac_aclk] [get_bd_pins vlan_inserter_0/axis_aclk]
+  connect_bd_net -net tri_mode_ethernet_mac_1_rx_reset [get_bd_pins tri_mode_ethernet_mac_1/rx_reset] [get_bd_pins util_vector_logic_1/Op1]
   connect_bd_net -net tri_mode_ethernet_mac_1_tx_enable [get_bd_pins axis_interconnect_0/M00_AXIS_ARESETN] [get_bd_pins tri_mode_ethernet_mac_1/tx_enable]
+  connect_bd_net -net tri_mode_ethernet_mac_2_rx_mac_aclk [get_bd_pins axis_interconnect_1/S01_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_2/rx_mac_aclk] [get_bd_pins vlan_inserter_1/axis_aclk]
+  connect_bd_net -net tri_mode_ethernet_mac_2_rx_reset [get_bd_pins tri_mode_ethernet_mac_2/rx_reset] [get_bd_pins util_vector_logic_2/Op1]
   connect_bd_net -net tri_mode_ethernet_mac_2_tx_enable [get_bd_pins axis_interconnect_0/M01_AXIS_ARESETN] [get_bd_pins tri_mode_ethernet_mac_2/tx_enable]
+  connect_bd_net -net tri_mode_ethernet_mac_3_rx_mac_aclk [get_bd_pins axis_interconnect_1/S02_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_3/rx_mac_aclk] [get_bd_pins vlan_inserter_2/axis_aclk]
+  connect_bd_net -net tri_mode_ethernet_mac_3_rx_reset [get_bd_pins tri_mode_ethernet_mac_3/rx_reset] [get_bd_pins util_vector_logic_3/Op1]
   connect_bd_net -net tri_mode_ethernet_mac_3_tx_enable [get_bd_pins axis_interconnect_0/M02_AXIS_ARESETN] [get_bd_pins tri_mode_ethernet_mac_3/tx_enable]
+  connect_bd_net -net tri_mode_ethernet_mac_4_rx_mac_aclk [get_bd_pins axis_interconnect_1/S03_AXIS_ACLK] [get_bd_pins tri_mode_ethernet_mac_4/rx_mac_aclk] [get_bd_pins vlan_inserter_3/axis_aclk]
+  connect_bd_net -net tri_mode_ethernet_mac_4_rx_reset [get_bd_pins tri_mode_ethernet_mac_4/rx_reset] [get_bd_pins util_vector_logic_4/Op1]
   connect_bd_net -net tri_mode_ethernet_mac_4_tx_enable [get_bd_pins axis_interconnect_0/M03_AXIS_ARESETN] [get_bd_pins tri_mode_ethernet_mac_4/tx_enable]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins axis_interconnect_1/M00_AXIS_ARESETN] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins axis_interconnect_1/S00_AXIS_ARESETN] [get_bd_pins util_vector_logic_1/Res] [get_bd_pins vlan_inserter_0/arstn]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins axis_interconnect_1/S01_AXIS_ARESETN] [get_bd_pins util_vector_logic_2/Res] [get_bd_pins vlan_inserter_1/arstn]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins axis_interconnect_1/S02_AXIS_ARESETN] [get_bd_pins util_vector_logic_3/Res] [get_bd_pins vlan_inserter_2/arstn]
+  connect_bd_net -net util_vector_logic_4_Res [get_bd_pins axis_interconnect_1/S03_AXIS_ARESETN] [get_bd_pins util_vector_logic_4/Res] [get_bd_pins vlan_inserter_3/arstn]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins tri_mode_ethernet_mac_0/rx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_1/rx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_2/rx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_3/rx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_4/rx_configuration_vector] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins tri_mode_ethernet_mac_0/tx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_1/tx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_2/tx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_3/tx_configuration_vector] [get_bd_pins tri_mode_ethernet_mac_4/tx_configuration_vector] [get_bd_pins xlconstant_1/dout]
 
